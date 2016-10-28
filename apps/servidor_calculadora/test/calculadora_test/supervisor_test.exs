@@ -8,8 +8,8 @@ defmodule ServidorCalculadora.SupervisorTest do
 
   test "creating un servidor cuando ya hay otro con el mismo nombre" do
     the_id = new_id()
-    assert {:ok, _pid} = ServidorCalculadora.Supervisor.start_calculadora(the_id)
-    assert {:ok, ^_pid} = ServidorCalculadora.Supervisor.start_calculadora(the_id)
+    assert {:ok, pid} = ServidorCalculadora.Supervisor.start_calculadora(the_id)
+    assert {:ok, ^pid} = ServidorCalculadora.Supervisor.start_calculadora(the_id)
   end
 
 end

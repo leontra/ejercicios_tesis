@@ -17,4 +17,6 @@ defmodule ServidorCalculadora do
     opts = [strategy: :one_for_one]
     Supervisor.start_link(children, opts)
   end
+
+  defdelegate start_calculadora(id), to: ServidorCalculadora.Supervisor
 end

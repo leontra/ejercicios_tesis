@@ -15,24 +15,24 @@ defmodule ServidorCalculadora.Server do
     {:ok, pid}
   end
 
-  def resultado do
-    GenServer.call(:calcu, :resultado)
+  def resultado(pid) do
+    GenServer.call(pid, :resultado)
   end
 
-  def sumar(num) do
-    GenServer.cast(:calcu, {:sumar, num})
+  def sumar(pid, num) do
+    GenServer.cast(pid, {:sumar, num})
   end
 
-  def restar(num) do
-    GenServer.cast(:calcu, {:restar, num})
+  def restar(pid, num) do
+    GenServer.cast(pid, {:restar, num})
   end
 
-  def multiplicar(num) do
-    GenServer.cast(:calcu, {:multiplicar, num})
+  def multiplicar(pid, num) do
+    GenServer.cast(pid, {:multiplicar, num})
   end
 
-  def dividir(num) do
-    GenServer.cast(:calcu, {:dividir, num})
+  def dividir(pid, num) do
+    GenServer.cast(pid, {:dividir, num})
   end
 
   ### Private API
